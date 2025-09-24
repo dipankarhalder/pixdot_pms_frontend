@@ -1,8 +1,24 @@
 /** Node modules */
 import express from "express";
+import cors from "cors";
+
+/** Custom modules */
+import config from "@/config";
 
 /** Initial express app */
 const app = express();
 
-/** run the server */
-app.listen(4000, () => console.log(`Server running on 4000`));
+/** Middlewares */
+app.use(cors());
+
+/** Initial routes */
+app.get("/", (req, res) => {
+  res.json({
+    message: "Hello from backend",
+  });
+});
+
+/** Run the server */
+app.listen(config.PORT, () =>
+  console.log(`Server running on http://localhost:${config.PORT}`),
+);

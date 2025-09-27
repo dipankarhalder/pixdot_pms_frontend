@@ -55,12 +55,25 @@
     "@types/connect" "*"
     "@types/node" "*"
 
+"@types/compression@^1.8.1":
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/@types/compression/-/compression-1.8.1.tgz#57cd1a5c0c585aca56124ab4daef1d254d6f5a7d"
+  integrity sha512-kCFuWS0ebDbmxs0AXYn6e2r2nrGAb5KwQhknjSPSPgJcGd8+HVSILlUyFhGqML2gk39HcG7D1ydW9/qpYkN00Q==
+  dependencies:
+    "@types/express" "*"
+    "@types/node" "*"
+
 "@types/connect@*":
   version "3.4.38"
   resolved "https://registry.yarnpkg.com/@types/connect/-/connect-3.4.38.tgz#5ba7f3bc4fbbdeaff8dded952e5ff2cc53f8d858"
   integrity sha512-K6uROf1LD88uDQqJCktA4yzL1YYAK6NgfsI0v/mTgyPKWsX1CnJ0XPSDhViejru1GcRkLWb8RlzFYJRqGUbaug==
   dependencies:
     "@types/node" "*"
+
+"@types/cookie-parser@^1.4.9":
+  version "1.4.9"
+  resolved "https://registry.yarnpkg.com/@types/cookie-parser/-/cookie-parser-1.4.9.tgz#f0e79c766a58ee7369a52e7509b3840222f68ed2"
+  integrity sha512-tGZiZ2Gtc4m3wIdLkZ8mkj1T6CEHb35+VApbL2T14Dew8HA7c+04dmKqsKRNC+8RJPm16JEK0tFSwdZqubfc4g==
 
 "@types/cors@^2.8.19":
   version "2.8.19"
@@ -79,7 +92,7 @@
     "@types/range-parser" "*"
     "@types/send" "*"
 
-"@types/express@^5.0.3":
+"@types/express@*", "@types/express@^5.0.3":
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/@types/express/-/express-5.0.3.tgz#6c4bc6acddc2e2a587142e1d8be0bce20757e956"
   integrity sha512-wGA0NX93b19/dZC1J18tKWVIYWyyF2ZjT9vin/NRu0qzzvfVzWjs04iq2rQ3H65vCTQYlRqs3YHfY7zjdV+9Kw==
@@ -389,6 +402,13 @@ etag@^1.8.1:
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==
 
+express-rate-limit@^8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/express-rate-limit/-/express-rate-limit-8.1.0.tgz#b956708999347e4d87146f8c3e6dd954fde7718b"
+  integrity sha512-4nLnATuKupnmwqiJc27b4dCFmB/T60ExgmtDD7waf4LdrbJ8CPZzZRHYErDYNhoz+ql8fUdYwM/opf90PoPAQA==
+  dependencies:
+    ip-address "10.0.1"
+
 express@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/express/-/express-5.1.0.tgz#d31beaf715a0016f0d53f47d3b4d7acf28c75cc9"
@@ -553,6 +573,11 @@ inherits@2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.4.tgz#0fa2c64f932917c3433a0ded55363aae37416b7c"
   integrity sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==
+
+ip-address@10.0.1:
+  version "10.0.1"
+  resolved "https://registry.yarnpkg.com/ip-address/-/ip-address-10.0.1.tgz#a8180b783ce7788777d796286d61bce4276818ed"
+  integrity sha512-NWv9YLW4PoW2B7xtzaS3NCot75m6nK7Icdv0o3lfMceJVRfSoQwqD4wEH5rLwoKJwUiZ/rfpiVBhnaF0FK4HoA==
 
 ipaddr.js@1.9.1:
   version "1.9.1"

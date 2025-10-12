@@ -25,7 +25,7 @@ export const SigninPage = ({ className, ...props }: React.ComponentProps<'form'>
             <FieldLabel htmlFor="password">Password</FieldLabel>
             <Link
               to={paths.forgot}
-              className="ml-auto text-[14px] font-medium text-indigo-700 underline-offset-4 hover:underline"
+              className="ml-auto text-[13px] font-semibold text-indigo-700 underline-offset-4 hover:underline"
             >
               Forgot password?
             </Link>

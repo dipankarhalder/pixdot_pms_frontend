@@ -6,6 +6,7 @@ import { AuthLayout } from '@/layout/AuthLayout';
 import { ErrorPage } from '@/pages/error';
 import { SigninPage } from '@/pages/auth/SigninPage';
 import { SignupPage } from '@/pages/auth/SignupPage';
+import { ForgotPassPage } from '@/pages/auth/ForgotPassPage';
 
 export const routers = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ export const routers = createBrowserRouter([
     children: [
       { index: true, element: <SigninPage /> },
       { path: paths.register, element: <SignupPage /> },
+      { path: paths.forgot, element: <ForgotPassPage /> },
     ],
   },
 ]);

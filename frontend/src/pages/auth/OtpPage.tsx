@@ -1,3 +1,4 @@
+// import { useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -14,7 +15,6 @@ import {
 import {
   InputOTP,
   InputOTPGroup,
-  InputOTPSeparator,
   InputOTPSlot,
 } from '@/components/ui/input-otp';
 
@@ -23,6 +23,7 @@ export const OtpPage = ({
   ...props
 }: React.ComponentProps<'div'>) => {
   const {
+    // register,
     handleSubmit,
     setValue,
     watch,
@@ -35,8 +36,16 @@ export const OtpPage = ({
   });
 
   const otpValue = watch('otp');
+
+  // useEffect(() => {
+  //   register('otp');
+  // }, [register]);
+
   const handleChange = (value: string) => {
-    setValue('otp', value);
+    setValue('otp', value, {
+      shouldValidate: true,
+      shouldDirty: true,
+    });
   };
 
   const onSubmit = (data: OtpFormSchema) => {
@@ -69,17 +78,11 @@ export const OtpPage = ({
               onChange={handleChange}
               required
             >
-              <InputOTPGroup className="gap-2 *:data-[slot=input-otp-slot]:rounded-md *:data-[slot=input-otp-slot]:border">
+              <InputOTPGroup className="gap-2.5 *:data-[slot=input-otp-slot]:h-14 *:data-[slot=input-otp-slot]:w-14 *:data-[slot=input-otp-slot]:rounded-md *:data-[slot=input-otp-slot]:border *:data-[slot=input-otp-slot]:text-xl">
                 <InputOTPSlot index={0} />
                 <InputOTPSlot index={1} />
-              </InputOTPGroup>
-              <InputOTPSeparator />
-              <InputOTPGroup className="gap-2 *:data-[slot=input-otp-slot]:rounded-md *:data-[slot=input-otp-slot]:border">
                 <InputOTPSlot index={2} />
                 <InputOTPSlot index={3} />
-              </InputOTPGroup>
-              <InputOTPSeparator />
-              <InputOTPGroup className="gap-2 *:data-[slot=input-otp-slot]:rounded-md *:data-[slot=input-otp-slot]:border">
                 <InputOTPSlot index={4} />
                 <InputOTPSlot index={5} />
               </InputOTPGroup>

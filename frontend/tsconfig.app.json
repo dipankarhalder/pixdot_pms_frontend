@@ -24,8 +24,10 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
+    /* ignore typescript */
+    "ignoreDeprecations": "6.0",
+
     /* base url config */
-    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     }

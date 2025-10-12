@@ -11,15 +11,15 @@ export const AuthLayout = () => {
           </a>
         </div>
         <div className="flex flex-1 items-center justify-center">
-          <div className="w-full max-w-xs">
+          <div className="w-[380px]">
             <Outlet />
           </div>
         </div>
       </div>
       <div className="bg-muted relative hidden lg:block">
         <img
-          src="/placeholder.svg"
-          alt="Image"
+          src="/bg.jpg"
+          alt="Authentication background"
           className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
         />
       </div>

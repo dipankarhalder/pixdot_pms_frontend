@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
@@ -21,6 +21,7 @@ export const SigninPage = ({
   className,
   ...props
 }: React.ComponentProps<'form'>) => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -31,6 +32,8 @@ export const SigninPage = ({
 
   const onSubmit = (data: SigninFormSchema) => {
     console.log('Form Data:', data);
+    localStorage.setItem('authToken', 'authenticated');
+    navigate(paths.admin);
   };
 
   return (

@@ -1,11 +1,21 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, Navigate } from 'react-router-dom';
+import { paths } from '@/config/paths';
 
 export const AuthLayout = () => {
+  const authTokenize = localStorage.getItem('authToken');
+
+  if (authTokenize) {
+    return <Navigate to={paths.admin} replace />;
+  }
+
   return (
     <div className="grid min-h-svh lg:grid-cols-2">
       <div className="flex flex-col gap-4 p-6 md:p-10">
         <div className="flex justify-center gap-2 md:justify-start">
-          <a href="#" className="flex items-center gap-2 font-medium">
+          <a
+            href="#"
+            className="flex items-center gap-2 font-medium"
+          >
             <div className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md"></div>
             Acme Inc.
           </a>

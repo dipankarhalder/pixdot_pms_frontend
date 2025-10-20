@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Eye, EyeOff } from 'lucide-react';
 import { paths } from '@/config/paths';
 import { cn } from '@/lib/utils';
 import { useForm } from 'react-hook-form';
@@ -21,6 +23,10 @@ export const SignupPage = ({
   className,
   ...props
 }: React.ComponentProps<'form'>) => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] =
+    useState(false);
+
   const {
     register,
     handleSubmit,
@@ -80,11 +86,28 @@ export const SignupPage = ({
           <FieldLabel htmlFor="password">
             Password
           </FieldLabel>
-          <Input
-            id="password"
-            type="password"
-            {...register('password')}
-          />
+          <div className="relative">
+            <Input
+              id="password"
+              type={showPassword ? 'text' : 'password'}
+              {...register('password')}
+              className="pr-10"
+            />
+            <button
+              type="button"
+              onClick={() =>
+                setShowPassword((prev) => !prev)
+              }
+              className="text-muted-foreground absolute top-1/2 right-2 -translate-y-1/2"
+              tabIndex={-1}
+            >
+              {showPassword ? (
+                <EyeOff className="h-5 w-5" />
+              ) : (
+                <Eye className="h-5 w-5" />
+              )}
+            </button>
+          </div>
           {errors.password && (
             <FieldError>
               {errors.password.message}
@@ -95,11 +118,30 @@ export const SignupPage = ({
           <FieldLabel htmlFor="confirm-password">
             Confirm Password
           </FieldLabel>
-          <Input
-            id="confirm-password"
-            type="password"
-            {...register('confirmPassword')}
-          />
+          <div className="relative">
+            <Input
+              id="confirm-password"
+              type={
+                showConfirmPassword ? 'text' : 'password'
+              }
+              {...register('confirmPassword')}
+              className="pr-10"
+            />
+            <button
+              type="button"
+              onClick={() =>
+                setShowConfirmPassword((prev) => !prev)
+              }
+              className="text-muted-foreground absolute top-1/2 right-2 -translate-y-1/2"
+              tabIndex={-1}
+            >
+              {showConfirmPassword ? (
+                <EyeOff className="h-5 w-5" />
+              ) : (
+                <Eye className="h-5 w-5" />
+              )}
+            </button>
+          </div>
           {errors.confirmPassword && (
             <FieldError>
               {errors.confirmPassword.message}
@@ -143,13 +185,21 @@ export const SignupPage = ({
           Or
         </FieldSeparator>
         <Field className="grid grid-cols-2 gap-4">
-          <Button variant="outline" type="button">
-            <Apple />
-            <span>Continue with Apple</span>
-          </Button>
-          <Button variant="outline" type="button">
+          <Button
+            variant="outline"
+            type="button"
+            className="bg-gray-50"
+          >
             <Google />
-            <span>Continue with Google</span>
+            <span>Google</span>
+          </Button>
+          <Button
+            variant="outline"
+            type="button"
+            className="bg-gray-50"
+          >
+            <Apple />
+            <span>Apple</span>
           </Button>
         </Field>
       </FieldGroup>

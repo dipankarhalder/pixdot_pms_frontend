@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { Eye, EyeOff } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
@@ -22,6 +24,8 @@ export const SigninPage = ({
   ...props
 }: React.ComponentProps<'form'>) => {
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -76,11 +80,28 @@ export const SigninPage = ({
               Forgot password?
             </Link>
           </div>
-          <Input
-            id="password"
-            type="password"
-            {...register('password')}
-          />
+          <div className="relative">
+            <Input
+              id="password"
+              type={showPassword ? 'text' : 'password'}
+              {...register('password')}
+              className="pr-10"
+            />
+            <button
+              type="button"
+              onClick={() =>
+                setShowPassword((prev) => !prev)
+              }
+              className="text-muted-foreground absolute top-1/2 right-2 -translate-y-1/2"
+              tabIndex={-1}
+            >
+              {showPassword ? (
+                <EyeOff className="h-5 w-5" />
+              ) : (
+                <Eye className="h-5 w-5" />
+              )}
+            </button>
+          </div>
           {errors.password && (
             <FieldError>
               {errors.password.message}
@@ -107,13 +128,21 @@ export const SigninPage = ({
           Or continue with
         </FieldSeparator>
         <Field className="grid grid-cols-2 gap-4">
-          <Button variant="outline" type="button">
-            <Apple />
-            <span>Sign in with Apple</span>
-          </Button>
-          <Button variant="outline" type="button">
+          <Button
+            variant="outline"
+            type="button"
+            className="bg-gray-50"
+          >
             <Google />
-            <span>Sign in with Google</span>
+            <span>Google</span>
+          </Button>
+          <Button
+            variant="outline"
+            type="button"
+            className="bg-gray-50"
+          >
+            <Apple />
+            <span>Apple</span>
           </Button>
         </Field>
       </FieldGroup>

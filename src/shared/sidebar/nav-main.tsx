@@ -1,4 +1,4 @@
-import { Settings2 } from 'lucide-react';
+import { CirclePlus } from 'lucide-react';
 import { type LucideIcon } from 'lucide-react';
 
 import {
@@ -8,7 +8,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from '@/components/ui/sidebar';
-import { Button } from '@/components/ui/button';
 
 export const NavMain = ({
   items,
@@ -26,27 +25,24 @@ export const NavMain = ({
         <SidebarMenuItem className="flex items-center gap-2">
           <SidebarMenuButton
             tooltip="Quick Create"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground active:bg-primary/90 active:text-primary-foreground min-w-8 duration-200 ease-linear"
+            className="text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground active:bg-primary/90 active:text-primary-foreground h-10 w-auto bg-indigo-700 px-4 duration-200 ease-linear"
           >
-            <Settings2 />
-            <span>Quick Create</span>
+            <CirclePlus />
+            <span className="font-medium">
+              Quick Create
+            </span>
           </SidebarMenuButton>
-          <Button
-            size="icon"
-            className="size-8 group-data-[collapsible=icon]:opacity-0"
-            variant="outline"
-          >
-            <Settings2 />
-            <span className="sr-only">Inbox</span>
-          </Button>
         </SidebarMenuItem>
       </SidebarMenu>
-      <SidebarMenu>
+      {/* <SidebarGroupLabel>Main Menu</SidebarGroupLabel> */}
+      <SidebarMenu className="mt-2">
         {items.map((item) => (
           <SidebarMenuItem key={item.title}>
             <SidebarMenuButton tooltip={item.title}>
               {item.icon && <item.icon />}
-              <span>{item.title}</span>
+              <span className="font-medium">
+                {item.title}
+              </span>
             </SidebarMenuButton>
           </SidebarMenuItem>
         ))}

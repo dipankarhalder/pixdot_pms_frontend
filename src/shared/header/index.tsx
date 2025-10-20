@@ -23,7 +23,7 @@ export const Header = ({
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbPage className="line-clamp-1">
+              <BreadcrumbPage className="line-clamp-1 font-medium">
                 {pageName}
               </BreadcrumbPage>
             </BreadcrumbItem>

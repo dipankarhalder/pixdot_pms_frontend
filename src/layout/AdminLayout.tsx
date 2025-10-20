@@ -14,8 +14,15 @@ export const AdminLayout = () => {
   }
 
   return (
-    <SidebarProvider>
-      <SidebarLeft />
+    <SidebarProvider
+      style={
+        {
+          '--sidebar-width': 'calc(var(--spacing) * 72)',
+          '--header-height': 'calc(var(--spacing) * 12)',
+        } as React.CSSProperties
+      }
+    >
+      <SidebarLeft variant="inset" />
       <SidebarInset>
         <Outlet />
       </SidebarInset>

@@ -161,6 +161,15 @@
   width: 140px;
   height: auto;
 }
+.app_sidebar .app_logo {
+  display: flex;
+  width: 100px;
+  height: auto;
+}
+.app_sidebar .app_logo svg {
+  width: 100px;
+  height: auto;
+}
 .app_auth_bg {
   background-image: url('/public/background.jpg');
   background-position: center;

@@ -9,7 +9,7 @@ import {
 
 export const sidebarData = {
   user: {
-    name: 'shadcn',
+    name: 'Dipankar Halder',
     email: 'dipankar@example.com',
     avatar: '/3.png',
   },

@@ -15,12 +15,12 @@ export const SidebarLeft = ({
   ...props
 }: React.ComponentProps<typeof Sidebar>) => {
   return (
-    <Sidebar className="border-r-0" {...props}>
+    <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
-        <NavMain items={data.navMain} />
+        <TeamSwitcher />
       </SidebarHeader>
       <SidebarContent>
+        <NavMain items={data.navMain} />
         <NavSecondary
           items={data.navSecondary}
           className="mt-auto"

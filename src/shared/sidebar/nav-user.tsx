@@ -57,10 +57,10 @@ export function NavUser({
                 </AvatarFallback>
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-medium">
+                <span className="truncate font-semibold">
                   {user.name}
                 </span>
-                <span className="truncate text-xs">
+                <span className="truncate text-xs font-medium">
                   {user.email}
                 </span>
               </div>
@@ -85,10 +85,10 @@ export function NavUser({
                   </AvatarFallback>
                 </Avatar>
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-medium">
+                  <span className="truncate font-semibold">
                     {user.name}
                   </span>
-                  <span className="truncate text-xs">
+                  <span className="truncate text-xs font-medium">
                     {user.email}
                   </span>
                 </div>
@@ -105,15 +105,15 @@ export function NavUser({
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <BadgeCheck />
-                Account
+                My Profile
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <CreditCard />
-                Billing
+                Invoice Billing
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <Bell />
-                Notifications
+                All Notifications
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />

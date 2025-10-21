@@ -1,5 +1,7 @@
 import { Header } from '@/shared/header';
 import { TopCard } from '@/components/dashboard/top-card';
+import { Revenue } from '@/components/dashboard/revenue';
+import { Earning } from '@/components/dashboard/earning';
 
 export const DashboardPage = () => {
   const formatDate = (date: Date) => {
@@ -27,8 +29,26 @@ export const DashboardPage = () => {
       <div className="flex flex-1 flex-col">
         <div className="@container/main flex flex-1 flex-col gap-2">
           <div className="flex flex-col gap-4 md:gap-6 md:py-6">
+            <div className="mb-3 w-full px-4 lg:px-6">
+              <h1 className="text-[20px] font-semibold text-gray-600">
+                Welcome back,{' '}
+                <span className="font-bold text-blue-800">
+                  Himadri Chakraborty
+                </span>
+              </h1>
+              <p className="text-[15px] font-medium text-gray-500">
+                We hope you're having a great day.
+              </p>
+            </div>
             <TopCard />
-            <div className="px-4 lg:px-6"></div>
+            <div className="flex flex-row gap-3 px-4 lg:px-6">
+              <div className="flex-1">
+                <Revenue />
+              </div>
+              <div className="flex-1">
+                <Earning />
+              </div>
+            </div>
           </div>
         </div>
       </div>

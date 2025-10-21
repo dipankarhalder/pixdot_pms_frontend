@@ -32,7 +32,6 @@ export const TopCard = () => {
           </div>
         </CardFooter>
       </Card>
-
       <Card className="@container/card border-orange-700 bg-orange-100">
         <CardHeader>
           <CardDescription className="font-medium text-black">
@@ -55,7 +54,6 @@ export const TopCard = () => {
           </div>
         </CardFooter>
       </Card>
-
       <Card className="@container/card border-red-600 bg-red-100">
         <CardHeader>
           <CardDescription className="font-medium text-black">
@@ -78,7 +76,6 @@ export const TopCard = () => {
           </div>
         </CardFooter>
       </Card>
-
       <Card className="@container/card border-sky-600 bg-sky-100">
         <CardHeader>
           <CardDescription className="font-medium text-black">
@@ -105,7 +102,6 @@ export const TopCard = () => {
           </div>
         </CardFooter>
       </Card>
-
       <Card className="@container/card border-emerald-600 bg-emerald-100">
         <CardHeader>
           <CardDescription className="font-medium text-black">
@@ -125,7 +121,6 @@ export const TopCard = () => {
           </div>
         </CardFooter>
       </Card>
-
       <Card className="@container/card border-blue-600 bg-blue-100">
         <CardHeader>
           <CardDescription className="font-medium text-black">

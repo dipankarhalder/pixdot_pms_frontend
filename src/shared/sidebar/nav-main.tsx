@@ -25,7 +25,7 @@ export const NavMain = ({
         <SidebarMenuItem className="flex items-center gap-2">
           <SidebarMenuButton
             tooltip="Quick Create"
-            className="text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground active:bg-primary/90 active:text-primary-foreground h-10 w-auto bg-indigo-700 px-4 duration-200 ease-linear"
+            className="text-primary-foreground active:bg-primary/90 active:text-primary-foreground h-10 w-auto cursor-pointer bg-blue-800 px-5 duration-200 ease-linear"
           >
             <CirclePlus />
             <span className="font-medium">
